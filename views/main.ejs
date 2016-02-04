@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DATA VISUALIZATION PART</title>
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+</body>
+<p>Lesson 1</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>Lesson2</p>
+<div id ="circle">
+	
+</div>
+<script type="text/javascript">
+var fruits = ["A","B","C","D"];
+d3.selectAll('li').style("color",function(){
+	var r = Math.round(Math.random()*255);
+	var g = Math.round(Math.random()*255);
+	var b = Math.round(Math.random()*255);
+	return "rgb("+r+","+g+","+b+")";
+}).data(fruits).text(function(d){
+	return d;
+});
+	var getHeight = function(){
+		return window.innerHeight;
+	}
+	var getWidth = function(){
+		return window.innerWidth;
+	}
+	var svg = d3.select('#circle')
+	.append('svg')
+	.attr('width',getWidth())
+	.attr('height',getHeight());
+	svg.append('circle')
+	.style('stroke','black')
+	.style('fill','red')
+	.attr('r',50)
+	.attr('cx',50)
+	.attr('cy',50);
+</script>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</html>
